@@ -1,5 +1,8 @@
 {
 	"devDependencies": {
+		"@zk-email/circuits": "^6.3.4",
+		"@zk-email/contracts": "^6.3.2",
+		"@zk-email/helpers": "^6.4.2",
 		"@zk-kit/incremental-merkle-tree": "^1.1.0",
 		"circom_tester": "^0.0.24",
 		"circomlibjs": "^0.1.7",
