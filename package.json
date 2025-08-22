@@ -1,11 +1,19 @@
 {
-	"devDependencies": {
-		"@zk-email/circuits": "^6.3.4",
-		"@zk-email/contracts": "^6.3.2",
-		"@zk-email/helpers": "^6.4.2",
-		"@zk-kit/incremental-merkle-tree": "^1.1.0",
-		"circom_tester": "^0.0.24",
-		"circomlibjs": "^0.1.7",
-		"snarkjs": "^0.7.5"
-	}
+  "type": "module",
+  "devDependencies": {
+    "@zk-email/circuits": "^6.3.4",
+    "@zk-email/contracts": "^6.3.2",
+    "@zk-email/helpers": "^6.4.2",
+    "@zk-email/zk-regex-compiler": "^2.0.0-alpha.1",
+    "@zk-kit/incremental-merkle-tree": "^1.1.0",
+    "circom_tester": "^0.0.24",
+    "circomlibjs": "^0.1.7",
+    "snarkjs": "^0.7.5",
+    "tsx": "^4.20.4"
+  },
+  "overrides": {
+    "@zk-email/helpers": {
+      "snarkjs": "npm:snarkjs@^0.7.5"
+    }
+  }
 }

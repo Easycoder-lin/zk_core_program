@@ -1,0 +1,7 @@
+{
+  "parts": [
+    { "is_public": false, "regex_def": "vote:" },
+    { "is_public": true,  "regex_def": "(alice|bob|carol)" }
+  ]
+}
+
