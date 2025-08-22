@@ -1,0 +1,147 @@
+Delivered-To: easycoderlin@gmail.com
+Received: by 2002:a05:7301:9f09:b0:18b:e4bc:f48d with SMTP id tz9csp781533dyc;
+        Fri, 22 Aug 2025 01:31:08 -0700 (PDT)
+X-Received: by 2002:a05:6a20:1586:b0:243:1edc:d9b4 with SMTP id adf61e73a8af0-24340d558f1mr2857902637.51.1755851468473;
+        Fri, 22 Aug 2025 01:31:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1755851468; cv=none;
+        d=google.com; s=arc-20240605;
+        b=KiUsbW2qOlTS0EJA0ch/AJgu++uz5iekdUYvBTbkXnD/9TlYPCVrhx3u+gCe65Grvz
+         FOFCLIG5Wi1isU+i0092x5ZBB/b97z+xXhKz/DIvCogziYS9wXy21PZV9WUNog9HDHRO
+         GT11g1crUmVR5RA6JU5EtcNbPpITK3nAz3+ZU3BOL14gBMx2ZzeBfnSO7fBs2DHewpeo
+         ixM9tLNg38GcQ7n/wHwSbJGn2WRRTptESZ7bFISOaLrBs6mI5/e/Nn0lXdtgfM2MUxHM
+         3oOUY4+/z+Nt3oGfdeFc6bs9Y0RmdQcC8OniUHpCj1cqjCwfC6AZPlTkJ5YSPrON9YcH
+         XYnw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=rUs3pvAaQ73shl+s8tB5hRS4n2odWu76DTRa0IzUClo=;
+        fh=+CO2TFt9dvZXkqIwzADjMEb/HWbTr/z5qTwR5FbxUYM=;
+        b=MwqCtwu2VZpHKYHLiRgBDDfx0FCK//tkYpv/Jmbd3dTDyaxLXOaiCTQrE83TH3Ksza
+         yhqO62Hw2eqry3P4pThG0dCGanKV7rTwqInA3uxAhclzig4/fJroGbwsnhOAt3Gz0kSC
+         RmVgJuaYAwnc55xAPV6Brto/G3J9P1eqkt1VBfyIw2XunN6G4ND9l7AvLIiwpf35DWw+
+         1bjF/LmJpQY/6J397sQRjHijlxQFacExcrtJjcVhxd2sDmhodMF2gzJEa0tuP/svVSRt
+         0EKMjUG+0+0xeHvno/K6OoV9mcj4zT7WbttQwAnPRo/y9aTYt1cMocONqOqgPqPq5PAc
+         HEjg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=aBIGJ7RX;
+       spf=pass (google.com: domain of jefflinabc@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jefflinabc@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <jefflinabc@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d2e1a72fcca58-770381a54fasor317984b3a.7.2025.08.22.01.31.08
+        for <easycoderlin@gmail.com>
+        (Google Transport Security);
+        Fri, 22 Aug 2025 01:31:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jefflinabc@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=aBIGJ7RX;
+       spf=pass (google.com: domain of jefflinabc@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jefflinabc@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1755851468; x=1756456268; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=rUs3pvAaQ73shl+s8tB5hRS4n2odWu76DTRa0IzUClo=;
+        b=aBIGJ7RXEKc0fyk7ipfgzqeBltml+usAbkeSnoOBUYOavmKXS8jsc3QJBK7rkY6wYq
+         KLcRW2AeTMvtgCVZPf0wiv+euRk75pRz9p7qAdRcPQKcsVBH+V3LEC2B4kHS7c+4Ne7X
+         QvmQy+g851QOMJ/shqCurR/3Cq8DIkqPEE8nOY+fRpyItGEsdSiyHEYqw1OWElrE+Kmi
+         q66PEgprm4UL4ypAkLmJMXLN+8fkdT/lOWGsvFcOuYwyoSg97Ykeikdd6G0Lxq1nR5Lc
+         /t42g2tFSkspvvPWEiNHgYgdVO1zONbrQW/tqktOT/VzV1F9gDlAqlfxE1OZVOmWJHIN
+         zQcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1755851468; x=1756456268;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=rUs3pvAaQ73shl+s8tB5hRS4n2odWu76DTRa0IzUClo=;
+        b=W7sZ7U6nF9CcDHcUvJBz6m2P3OFuNkwiolwdSTFfoPUVDgfBGvspP6xGPqXRAmi9Ad
+         w14qWMtVhHWrQyzwsWd0VbNHw/wZms5SUJC732D441vnqndZymzKoHYZPlvWfBIXyBCm
+         OqnB+V7tsRE6TiBb48mIZ+Hp2k+R/MPVbO/Z26XlXUZJMUl3twVm/61e467tAl/ToHYA
+         6Gp7fV1iRoBAg0gkTuNui/bJeU4PI8DoNGti4WKp0NGXMrBwjIIMQ+2fNRdm5cJQvNHR
+         +yuFe/eblbUg7g26KGXa8GsqMKPJXwJ8v9VM3gx42TQ+uvt8WXbs7do5TNWW4Xhzat3J
+         kghA==
+X-Gm-Message-State: AOJu0YzoLoXydVQN0hm5SImaBqSBO8AV4xYcC490UhqXlhqOTMhLSs1y
+	kOpc7DoP+vzk9IwEQ8s8cUybs39xU8GripC4Uk9IwiIzxaCDFIESIDddqmTGtjI6iPiIJph/0nP
+	mheC4ff24zj1Av82BG3htG8Mwt0Y1pNJ1rQ==
+X-Gm-Gg: ASbGncs585I1UgHy2zV6gUVuuEUZexCvJA7ADDJZGiRR+tDl8m8/2Kt2pyySGpGwgKl
+	qwdxUR39r+C/1uFB6pBSpagKEpXQKdPj8arEo+TOOFKiNrwNznCfVl900X8dL0oO+EiwlLSSwWA
+	cLcQ934GxjIGI12A4gmAfDhRwfDHy5mb4PlWOw+uyEM6iHStWLWsVCKIPVZKpUHQoEHhuxQrHHV
+	KsZFmo=
+X-Google-Smtp-Source: AGHT+IFF8q0ZrBcWLBbIG4HhGUqwsRD4IrOCBkxPRMDCmFuRVhGYoDUnucZej6NO79OkZbt0uMqrRj6SYO4nzHc8NrA=
+X-Received: by 2002:a05:6a20:3c89:b0:23d:f8d2:f80f with SMTP id
+ adf61e73a8af0-24340b44325mr2781812637.22.1755851467677; Fri, 22 Aug 2025
+ 01:31:07 -0700 (PDT)
+MIME-Version: 1.0
+From: =?UTF-8?B?5p6X5L2R5Lie?= <jefflinabc@gmail.com>
+Date: Fri, 22 Aug 2025 16:30:55 +0800
+X-Gm-Features: Ac12FXw3xO2Krt09lp7ETptFz-ls_rq-qdRTyR4fAEPDTWSpRz6LDUBwPtEhdzA
+Message-ID: <CAJ8Ld6a_ZPphEcY388cLszanna3XsLDhm2uf2NhfGkJET6kg3A@mail.gmail.com>
+Subject: President Election
+To: easycoderlin@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000000263d0063cf00770"
+
+--0000000000000263d0063cf00770
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Easycoderlin,
+
+You=E2=80=99re eligible to vote in President Election.To cast your vote, pl=
+ease
+follow these steps:
+
+1.Hit Reply to this email (don=E2=80=99t forward)
+
+2.On a single line in the message body, type exactly one of:
+
+vote:(Bob|Alice|Jim)
+
+3.Send from the same email address that received this message.
+
+*Tips:*1*.*Keep it simple (plain text is best).2.You can delete quoted
+previous messages to keep the reply short.3.You don=E2=80=99t need to chang=
+e the
+subject.
+
+*Deadline:* 2025/09/01 (GMT+8).
+*Privacy:* Your vote is checked with zero-knowledge proofs to confirm
+validity and email authenticity without revealing your full message.
+
+Thank you!
+
+=E2=80=94 Jeff
+
+--0000000000000263d0063cf00770
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div style=3D"margin:0px=
+;min-width:0px;padding:0px 0px 20px;width:auto;font-family:&quot;Google San=
+s&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:medium"><di=
+v id=3D"m_7159727796114756412m_-2758561286254236586gmail-:z6" style=3D"dire=
+ction:ltr;margin:8px 0px 0px;padding:0px;font-size:0.875rem;overflow-x:hidd=
+en"><div id=3D"m_7159727796114756412m_-2758561286254236586gmail-:z5" style=
+=3D"direction:ltr;font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-variant-alternates:normal;font-size-adjust:none;font-kerning:auto;fo=
+nt-feature-settings:normal;font-stretch:normal;font-size:small;line-height:=
+1.5;font-family:Arial,Helvetica,sans-serif;overflow:auto hidden"><div dir=
+=3D"ltr"><p>Hi Easycoderlin,</p><p>You=E2=80=99re eligible to vote in Presi=
+dent Election.To cast your vote, please follow these steps:</p><p>1.Hit Rep=
+ly=C2=A0to this email (don=E2=80=99t forward)</p><p>2.On a single line in t=
+he message body, type exactly one of:</p><p>vote:(Bob|Alice|Jim)</p><pre><d=
+iv><span style=3D"font-family:Arial,Helvetica,sans-serif">3.Send from the s=
+ame email address</span><span style=3D"font-family:Arial,Helvetica,sans-ser=
+if">=C2=A0that received this message.</span></div></pre><p><strong>Tips:</s=
+trong>1<strong>.</strong>Keep it simple (plain text is best).2.You can dele=
+te quoted previous messages to keep the reply short.3.You don=E2=80=99t nee=
+d to change the subject.</p><p><strong>Deadline:</strong>=C2=A02025/09/01 (=
+GMT+8).<br><strong>Privacy:</strong>=C2=A0Your vote is checked with zero-kn=
+owledge proofs to confirm validity and email authenticity without revealing=
+ your full message.</p><p>Thank you!</p><p>=E2=80=94 Jeff<br></p></div><div=
+></div><div></div></div></div><div style=3D"clear:both"></div></div><br></d=
+iv>
+</div>
+</div>
+
+--0000000000000263d0063cf00770--
