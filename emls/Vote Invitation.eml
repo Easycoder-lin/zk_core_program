@@ -1,0 +1,100 @@
+Delivered-To: easycoderlin@gmail.com
+Received: by 2002:a05:7301:4107:b0:1d7:8ba9:c9e2 with SMTP id pf7csp610660dyb;
+        Sun, 7 Sep 2025 06:36:05 -0700 (PDT)
+X-Received: by 2002:a17:903:2288:b0:246:4077:4563 with SMTP id d9443c01a7336-25170e428e7mr66685975ad.34.1757252165168;
+        Sun, 07 Sep 2025 06:36:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1757252165; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ZMpOYpoXXBv9DP0/Eoidz4D5lz89vw6xY4QYBv0tI0ev6tO6gQz/pu3q6783taS/h1
+         WgXDlG9Dvr07R2BumBoUBn4ji8mKTAc+bBKouWw9qlE9JX3V/J3qN8AXd/J/jjGPgYKi
+         b6HBIBSjw/MkEEdha4RRE50/QuEahbSIIsYGr9KKFiqVwRS72sl09cD6TRPzVxSQjflA
+         OUzFo7m3neZUJ1UB4Oo9x8B3fNBKl1TCB7FKjjfyST0jD/0/em4AnF2R8mGf3fln0PG9
+         NoZLQ+RR0tTzjgNhGJ5xxTArLpnMi3fgXoCJrdrCvSQHy6xzHnKv+IvL99O7WwhpXU5N
+         HMCg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=BiZObam6XE8aXKpPjnDI0psRebuHM4pXcCdlIga+0SM=;
+        fh=+CO2TFt9dvZXkqIwzADjMEb/HWbTr/z5qTwR5FbxUYM=;
+        b=lOqKzmAcO3NoqXunrP+2H2ONfHsS0ArHyz17d2SLvxqNe8/+ruffCKUC6bV8ipFS1A
+         sk7V7x0rklhRDPlok4aZ7HFVYTVCfe7L+IujgT2wzmAjvCXZ9OoBqTNCeTpwLAXCVXh8
+         2nz0e8UpStLq87dv7CykCAJHASy1thBdRcooxzysMyvxzlIwBSexT8ziEj6sC17Eb4qJ
+         OqcqUY5S3q86/7XrWWTBsMq7pEPbnzSBC199ROfibWb4QfiyjzKw1OIHwsFxfqV7qKLh
+         tsbeKDLX3NOuJfd0nHFQ0GYTKAewjpirE3jMHtP+XCUfRMmaZPDjqPy4gqyy9vgLZRgz
+         lTXw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=BPlvBBTi;
+       spf=pass (google.com: domain of jefflinabc@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jefflinabc@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <jefflinabc@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d9443c01a7336-24c965afa9bsor72995085ad.1.2025.09.07.06.36.05
+        for <easycoderlin@gmail.com>
+        (Google Transport Security);
+        Sun, 07 Sep 2025 06:36:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jefflinabc@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=BPlvBBTi;
+       spf=pass (google.com: domain of jefflinabc@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jefflinabc@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1757252164; x=1757856964; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=BiZObam6XE8aXKpPjnDI0psRebuHM4pXcCdlIga+0SM=;
+        b=BPlvBBTiZSO1bHxTnbeGe6pqfvDvOdolAV4Xkss3bObSFkSWoR1MRCyeDHjx3gDUU2
+         tndWjfdNSOe1nelMpvyKUdbnlLAC13+9sxy52WxOLneg+LviTdd8VmiIyTZYYhfXYLVX
+         Sf44XNtkZkD0EMwHSylvBl5Y4LooYfdRYol2s4jlRbYqMN7DlHUjYN3O1LT94xDq8Wku
+         C07mZkza7hvhm5wWuzXW92akJgl5YC65PSkSx9QmXDamXrgoUkNiJyJhONG7c4HBUIE8
+         MUnlTlZOKNM/HHDdEDCLwbIH/fg4AvF2M57qzvX+ZxpzqmhLTM5NCepYR1gxeG0u+kQY
+         wNTQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1757252164; x=1757856964;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=BiZObam6XE8aXKpPjnDI0psRebuHM4pXcCdlIga+0SM=;
+        b=I0GdwMKpQjdjG1NmLVWoj3+Ks3xALHlnlYvZnnyWC2tLjzAkGclGvkD8rePFa3PBqL
+         HBOXnFJUMmsPWV2r2AJ3jyBoSQVuN67ihB6bYY+itS38LRht1H9K61XneM6s9mE/JWji
+         WHrqoBqsE1f3Kwwo434pQqSxhdmwWkhGwCUngvkaAWCBEy4u+zmuJhJzc5C4obuTFtwC
+         wQfLPS5nhR5/krCh5PyDpBW2W5+ixa8P8egtoWKwrfZIhswwv2+7x3qqollrcYUodpmm
+         ecNBC6pqJb9YGIFaglSjg5AiHFqMTx3w449WmiOidvW5nAJc5I/fP//DyNeoci5tz3AY
+         5ipA==
+X-Gm-Message-State: AOJu0YwJr+mIaMWwhvodjdIayhLi+dPtErDG7R/+jj66tkQGgnJdrp/l
+	2y1VYv4/gKsPAHVrbqG9Wo9coeg1OscAR99e0hRNPC28nUsMfHUJRZS+ViSDfIsuiygNt4bp7fZ
+	fvAhkPCrdRz9JkUKPa2gzWd+wD6ICJj8zYKbw
+X-Gm-Gg: ASbGncvneMo1BvTOqPo6bJqtbE8fMI76fPYhni/2XhRyD079n2Lajd7H/aIzVHaBbti
+	M8HOuyVYwwFN8bErPk8sM6+QCWkpagLD8pfczEOW9iKzce/0PfRPjkJYCDteI+cdn36I/r6cNqD
+	LeLtZJJSj6S0NBtcVTHS6MICX0Wp14yAQWUnXjOYBzyjP8nH33jVOQexswLBL5QL/SlALfwXJiO
+	FuxkSzG
+X-Google-Smtp-Source: AGHT+IEabOoxps5IoRf5bfOweaM4dEC0K14+ik7O9AnFQow/giPEBoId3mwY11PO8ohZUllNK3wHa6fijFuGMZVHRb8=
+X-Received: by 2002:a17:902:f681:b0:250:74b2:a840 with SMTP id
+ d9443c01a7336-25172483a34mr70982065ad.44.1757252164383; Sun, 07 Sep 2025
+ 06:36:04 -0700 (PDT)
+MIME-Version: 1.0
+From: =?UTF-8?B?5p6X5L2R5Lie?= <jefflinabc@gmail.com>
+Date: Sun, 7 Sep 2025 21:35:53 +0800
+X-Gm-Features: AS18NWA4fa1r4Kfe2bskFbWeFM3PDhT9cOrUxn75cJ7JNW-Djc2wHYUUZJzqaVs
+Message-ID: <CAJ8Ld6YoUbLtg-Sb9nf1dzRAyRpiuO_rq520=dc8rKbjxhqTyw@mail.gmail.com>
+Subject: Vote Invitation EID-2025-09
+To: easycoderlin@gmail.com
+Content-Type: multipart/alternative; boundary="00000000000009f775063e362781"
+
+--00000000000009f775063e362781
+Content-Type: text/plain; charset="UTF-8"
+
+Election: EID-2025-09
+Token: 9F7C3A12B8D44E6F9A0B1234C56789DEF0123456789ABCDEF0123456789ABCDE
+ReplyFormat: Choice:<0|1|2>  (Do NOT include Token in your reply)
+
+--00000000000009f775063e362781
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span class=3D"gmail-il">Election</span>: EID-2025-09<br>T=
+oken: 9F7C3A12B8D44E6F9A0B1234C56789DEF0123456789ABCDEF0123456789ABCDE<br>R=
+eplyFormat:=C2=A0<span class=3D"gmail-il">Choice</span>:&lt;0|1|2&gt; =C2=
+=A0(Do NOT include Token in your reply)</div>
+
+--00000000000009f775063e362781--

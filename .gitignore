@@ -21,9 +21,7 @@ tools/vote-email_js/
 build/
 
 # Email samples & generated paths (secrets!)
-emls/*.eml
 paths/*.json
-allowlist.csv
 
 # Local env
 .env
