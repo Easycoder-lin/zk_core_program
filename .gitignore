@@ -1,24 +1,30 @@
-# OS/IDE
-.DS_Store
-.idea
-.vscode/
-
 # Node
 node_modules/
-pnpm-lock.yaml
+npm-debug.log
+yarn-error.log
 
-# Circom build artifacts
+# Circom / snarkjs build artifacts
+tools/*.ptau
+tools/*.zkey
+tools/*.wtns
+tools/*.r1cs
+tools/*.sym
+tools/*.json
+tools/*.dat
+tools/*.key
+tools/*.bin
+tools/proof.json
+tools/public.json
+tools/vote-email_js/
+
+# Build folder
 build/
-*.r1cs
-*.wasm
-*.zkey
-*.ptau
-*.sym
 
-# Foundry
-out/
-cache/
-broadcast/
+# Email samples & generated paths (secrets!)
+emls/*.eml
+paths/*.json
+allowlist.csv
 
-# Misc
+# Local env
 .env
+.DS_Store

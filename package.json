@@ -1,5 +1,16 @@
 {
   "type": "module",
+  "scripts": {
+    "compile": "circom circuits/vote-email.circom --r1cs --wasm --sym -o tools -l node_modules",
+    "inputs": "node scripts/make-inputs.js",
+    "witness": "snarkjs wtns calculate tools/vote-email_js/vote-email.wasm vote.json tools/witness.wtns",
+    "ptau15": "snarkjs powersoftau new bn128 15 tools/pot15_0000.ptau -v && snarkjs powersoftau contribute tools/pot15_0000.ptau tools/pot15_0001.ptau -v && snarkjs powersoftau prepare phase2 tools/pot15_0001.ptau tools/pot15_final.ptau -v",
+    "setup": "snarkjs groth16 setup tools/vote-email.r1cs tools/pot15_final.ptau tools/vote_0000.zkey && snarkjs zkey contribute tools/vote_0000.zkey tools/vote_final.zkey -v && snarkjs zkey export verificationkey tools/vote_final.zkey tools/verification_key.json",
+    "prove": "snarkjs groth16 prove tools/vote_final.zkey tools/witness.wtns tools/proof.json tools/public.json",
+    "verify": "snarkjs groth16 verify tools/verification_key.json tools/public.json tools/proof.json",
+    "clean": "rm -rf tools/vote-email_js tools/*.r1cs tools/*.sym tools/*.wtns tools/*.zkey tools/*.ptau tools/proof.json tools/public.json",
+    "demo": "npm run compile && npm run inputs && npm run witness && npm run ptau15 && npm run setup && npm run prove && npm run verify"
+  },
   "devDependencies": {
     "@zk-email/circuits": "^6.3.4",
     "@zk-email/contracts": "^6.3.2",
@@ -7,7 +18,9 @@
     "@zk-email/zk-regex-compiler": "^2.0.0-alpha.1",
     "@zk-kit/incremental-merkle-tree": "^1.1.0",
     "circom_tester": "^0.0.24",
+    "circomlib": "^2.0.5",
     "circomlibjs": "^0.1.7",
+    "ethers": "^6.15.0",
     "snarkjs": "^0.7.5",
     "tsx": "^4.20.4"
   },
