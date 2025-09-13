@@ -17,7 +17,7 @@ This project provides a **zero-knowledge email voting** system. Voters receive a
 ## Prerequisites
 
 * Node.js ≥ 18
-* [circom](https://docs.circom.io/getting-started/installation/) 2.x
+* [circom](https://docs.circom.io/getting-started/installation/) ≥ 2.2.2
 * [snarkjs](https://github.com/iden3/snarkjs)
 
 To install local dependencies, run:
