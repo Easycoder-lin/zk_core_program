@@ -27,7 +27,7 @@ npm install
 ```
 
 ## Workflow
-**1. Build allowlist & Merkle tree**
+**1. Build allowlist & Merkle tree**<br>
 First, you need to create an ```allowlist.csv``` file. This file contains the email and a secret token for each eligible voter.
 ```
 email,token
@@ -42,20 +42,20 @@ This command will create ```tree.json``` and a separate file for each voter in t
 
 ---
 
-**2. Parse voter reply → build inputs**
+**2. Parse voter reply → build inputs**<br>
 Place the invite and reply emails in the ```emls/``` directory. Then, generate the circuit's input files, ```vote.json``` and ```public.json```, by running:
 ```bash
 npm run inputs
 ```
 ---
-**3. Compile circuit**
+**3. Compile circuit**<br>
 Compile the Circom circuit into the necessary artifacts for proof generation:
 ```bash
 npm run compile
 ```
 ---
 
-**4. Setup trusted ceremony**
+**4. Setup trusted ceremony**<br>
 Run the Powers of Tau ceremony and prepare phase 2:
 ```bash
 npm run ptau15
@@ -66,7 +66,7 @@ npm run setup
 ```
 ---
 
-**5. Prove & verify locally**
+**5. Prove & verify locally**<br>
 **- Witness**
 ```bash
 npm run witness
@@ -86,7 +86,7 @@ You should see:
 [INFO] snarkJS: OK!
 ```
 
-**6. Full demo (one command)**
+**6. Full demo (one command)**<br>
 You can run the full flow (compile → inputs → witness → setup → prove → verify) with:
 ```bash
 npm run demo
@@ -94,7 +94,7 @@ npm run demo
 
 ---
 
-**.gitignore**
+**.gitignore**<br>
 This repository ignores the following files and directories to protect sensitive data and keep the repository clean:
 - ```node_modules/```
 - **Compiled artifacts:** ```.ptau```, ```.zkey```, ```.r1cs```, ```.wtns```, ```.wasm```, etc.
