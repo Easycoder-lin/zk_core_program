@@ -28,3 +28,5 @@ allowlist.csv
 # Local env
 .env
 .DS_Store
+
+lib/
