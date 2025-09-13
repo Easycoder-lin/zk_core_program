@@ -45,52 +45,56 @@ This command will create ```tree.json``` and a separate file for each voter in t
 **2. Parse voter reply → build inputs**
 Place the invite and reply emails in the ```emls/``` directory. Then, generate the circuit's input files, ```vote.json``` and ```public.json```, by running:
 ```bash
-node scripts/make-inputs.js
+npm run inputs
 ```
 ---
 **3. Compile circuit**
 Compile the Circom circuit into the necessary artifacts for proof generation:
 ```bash
-circom circuits/vote-email.circom --r1cs --wasm --sym -o tools/ -l node_modules
+npm run compile
 ```
 ---
 
 **4. Setup trusted ceremony**
-This step involves creating the necessary cryptographic keys for your circuit. First, set up the **Powers of Tau**
+Run the Powers of Tau ceremony and prepare phase 2:
 ```bash
-npx snarkjs powersoftau new bn128 15 tools/pot15_0000.ptau -v
-npx snarkjs powersoftau contribute tools/pot15_0000.ptau tools/pot15_0001.ptau -v
-npx snarkjs powersoftau prepare phase2 tools/pot15_0001.ptau tools/pot15_final.ptau -v
+npm run ptau15
 ```
-**Circuit-specific**
+Then generate the proving/verification keys:
 ```bash
-npx snarkjs groth16 setup tools/vote-email.r1cs tools/pot15_final.ptau tools/vote_0000.zkey
-npx snarkjs zkey contribute tools/vote_0000.zkey tools/vote_final.zkey -v
-npx snarkjs zkey export verificationkey tools/vote_final.zkey tools/verification_key.json
+npm run setup
 ```
 ---
 
 **5. Prove & verify locally**
 **- Witness**
 ```bash
-npx snarkjs wtns calculate tools/vote-email_js/vote-email.wasm vote.json tools/witness.wtns
+npm run witness
 ```
 
 **- Proof**
 ```bash
-npx snarkjs groth16 prove tools/vote_final.zkey tools/witness.wtns tools/proof.json tools/public.json
+npm run prove
 ```
 
 **- Verify**
 ```bash
-npx snarkjs groth16 verify tools/verification_key.json tools/public.json tools/proof.json
+npm run verify
+```
+You should see:
+```csharp
+[INFO] snarkJS: OK!
+```
 
-# → [INFO] snarkJS: OK!
+**6. Full demo (one command)**
+You can run the full flow (compile → inputs → witness → setup → prove → verify) with:
+```bash
+npm run demo
 ```
 
 ---
 
-```.gitignore```
+**.gitignore**
 This repository ignores the following files and directories to protect sensitive data and keep the repository clean:
 - ```node_modules/```
 - **Compiled artifacts:** ```.ptau```, ```.zkey```, ```.r1cs```, ```.wtns```, ```.wasm```, etc.
